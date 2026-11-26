@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ORVEX — Connect. Cooperate. Support.</title>
+<meta name="description" content="ORVEX brings people into the same orbit — to connect, cooperate and lift each other up. Submission for the CSC Winter Sparkathon.">
+<meta name="theme-color" content="#04050b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="loading">
+
+<!-- ============ OPENING ANIMATION ============ -->
+<div id="loader" aria-hidden="true">
+  <div class="curtain left"></div>
+  <div class="curtain right"></div>
+  <div class="loader-inner">
+    <div class="loader-ring"><span></span><span></span><span></span></div>
+    <h1 class="loader-word"><span>O</span><span>R</span><span>V</span><span>E</span><span>X</span></h1>
+    <div class="loader-bar"><i id="loaderBar"></i></div>
+    <p class="loader-log mono"><span id="loaderLog">initializing</span> <b id="loaderPct">0%</b></p>
+  </div>
+</div>
+
+<div id="progress"></div>
+<div id="glow"></div>
+<canvas id="bg" aria-hidden="true"></canvas>
+<div class="grid-overlay" aria-hidden="true"></div>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <a href="#top" class="logo" data-text="ORVEX"><span class="logo-dot"></span>ORVEX</a>
+  <nav class="links" id="links">
+    <a href="#about">Mission</a>
+    <a href="#features">Features</a>
+    <a href="#how">How it works</a>
+    <a href="#demo">Try it</a>
+    <a href="#ai">AI use</a>
+    <a href="#team">Team</a>
+  </nav>
+  <a href="#submit" class="btn btn-sm" data-magnetic>View Submission</a>
+  <button class="burger" id="burger" aria-label="Toggle menu"><i></i><i></i></button>
+</header>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="aurora a1"></div><div class="aurora a2"></div><div class="aurora a3"></div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <div class="badge reveal"><span class="pulse"></span>CSC Winter Sparkathon · Team ORVEX</div>
+      <h2 class="hero-title">
+        <span class="line reveal" data-delay="1">Connection,</span>
+        <span class="line reveal grad" data-delay="2">engineered.</span>
+      </h2>
+      <p class="hero-sub reveal" data-delay="3">
+        ORVEX brings people into the same orbit — to connect, cooperate and lift each other up.
+        Built for <span class="rotator" id="rotator">classmates</span>.
+      </p>
+      <div class="hero-cta reveal" data-delay="4">
+        <a href="#demo" class="btn btn-primary" data-magnetic><span>Try the Orbit</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="#about" class="btn btn-ghost" data-magnetic>Why it matters</a>
+      </div>
+      <div class="scroll-hint reveal" data-delay="5"><span></span>scroll</div>
+    </div>
+
+    <div class="hero-visual reveal" data-delay="2">
+      <div class="orb-wrap" id="orbWrap">
+        <div class="orb">
+          <div class="orb-core"><span>ORVEX</span></div>
+          <div class="ring r1"><i></i></div>
+          <div class="ring r2"><i></i><i></i></div>
+          <div class="ring r3"><i></i><i></i><i></i></div>
+        </div>
+        <div class="chip c1">● study circle</div>
+        <div class="chip c2">● neighbors</div>
+        <div class="chip c3">● give back</div>
+        <div class="chip c4">● support space</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <span>CONNECT</span><span>✦</span><span>COOPERATE</span><span>✦</span><span>SUPPORT</span><span>✦</span><span>GIVE BACK</span><span>✦</span><span>SHARE</span><span>✦</span>
+    <span>CONNECT</span><span>✦</span><span>COOPERATE</span><span>✦</span><span>SUPPORT</span><span>✦</span><span>GIVE BACK</span><span>✦</span><span>SHARE</span><span>✦</span>
+  </div>
+</div>
+
+<!-- ============ MISSION ============ -->
+<section class="section" id="about">
+  <div class="wrap about-grid">
+    <div>
+      <p class="eyebrow reveal">01 — The mission</p>
+      <h3 class="h2 reveal" data-delay="1">Being online has never been easier. <span class="grad">Feeling connected still is not.</span></h3>
+    </div>
+    <div class="about-text">
+      <p class="reveal" data-delay="2">Most apps are built to hold your attention. ORVEX is built to hold people together. We make it simple to find the right few people — classmates, neighbors, teammates, volunteers — and actually do something meaningful with them.</p>
+      <p class="reveal" data-delay="3">Instead of endless feeds, ORVEX forms small <b>orbits</b>: focused circles built around what people need and what they can offer. Study help. A listening ear. A weekend cleanup. A creative project. Every orbit exists to make someone's day a little lighter.</p>
+      <div class="pillars reveal" data-delay="4">
+        <div><b>Connect</b><span>find your people</span></div>
+        <div><b>Cooperate</b><span>do things together</span></div>
+        <div><b>Support</b><span>lift each other up</span></div>
+        <div><b>Include</b><span>built for everyone</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURES ============ -->
+<section class="section" id="features">
+  <div class="wrap">
+    <p class="eyebrow reveal">02 — Features</p>
+    <h3 class="h2 reveal" data-delay="1">Everything a community needs, <span class="grad">nothing it doesn't.</span></h3>
+
+    <div class="cards">
+      <article class="card reveal" data-tilt data-delay="1">
+        <div class="icon">◎</div>
+        <h4>Orbits</h4>
+        <p>Small, focused circles formed around shared interests and needs — so conversations stay meaningful, not noisy.</p>
+      </article>
+      <article class="card reveal" data-tilt data-delay="2">
+        <div class="icon">✦</div>
+        <h4>Smart Match</h4>
+        <p>AI-assisted matching pairs people by what they can offer and what they are looking for, in seconds.</p>
+      </article>
+      <article class="card reveal" data-tilt data-delay="3">
+        <div class="icon">❖</div>
+        <h4>Give-Back Board</h4>
+        <p>Post a need or offer your time. Volunteering and mutual aid, organized in one clear place.</p>
+      </article>
+      <article class="card reveal" data-tilt data-delay="1">
+        <div class="icon">◐</div>
+        <h4>Safe Spaces</h4>
+        <p>Private, respectful rooms for the hard conversations, with simple tools to keep everyone comfortable.</p>
+      </article>
+      <article class="card reveal" data-tilt data-delay="2">
+        <div class="icon">⌘</div>
+        <h4>Accessible by Design</h4>
+        <p>Keyboard friendly, high contrast, reduced-motion aware and readable on any screen, from the start.</p>
+      </article>
+      <article class="card reveal" data-tilt data-delay="3">
+        <div class="icon">☄</div>
+        <h4>Shared Moments</h4>
+        <p>Turn a conversation into a plan: study sessions, cleanups, game nights and projects people do together.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section class="section" id="how">
+  <div class="wrap">
+    <p class="eyebrow reveal">03 — How it works</p>
+    <h3 class="h2 reveal" data-delay="1">From “I need help” to <span class="grad">“we’ve got this”</span> in four steps.</h3>
+
+    <div class="steps reveal" data-delay="2">
+      <div class="step"><span class="num mono">01</span><h4>Tell us your orbit</h4><p>Share what you need or what you can offer.</p></div>
+      <div class="step"><span class="num mono">02</span><h4>Get matched</h4><p>ORVEX finds people whose needs and strengths fit yours.</p></div>
+      <div class="step"><span class="num mono">03</span><h4>Meet &amp; plan</h4><p>Jump into a small circle and turn talk into a plan.</p></div>
+      <div class="step"><span class="num mono">04</span><h4>Do it together</h4><p>Show up, help out and share the experience.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INTERACTIVE DEMO ============ -->
+<section class="section" id="demo">
+  <div class="wrap">
+    <p class="eyebrow reveal">04 — Try it</p>
+    <h3 class="h2 reveal" data-delay="1">Pick what you need. <span class="grad">Watch your orbit respond.</span></h3>
+    <p class="lead reveal" data-delay="2">This is a live preview of the idea. Choose a focus, then click glowing people to connect. (Names are sample data.)</p>
+
+    <div class="demo reveal" data-delay="2">
+      <div class="chips" id="orbitChips">
+        <button class="pill active" data-tag="study">Study help</button>
+        <button class="pill" data-tag="wellness">Someone to talk to</button>
+        <button class="pill" data-tag="volunteer">Volunteer</button>
+        <button class="pill" data-tag="create">Create together</button>
+      </div>
+      <div class="demo-stage">
+        <canvas id="orbitCanvas" aria-label="Interactive orbit visualization"></canvas>
+        <div class="demo-panel">
+          <p class="mono small">YOUR ORBIT</p>
+          <h4 id="orbitTitle">Study help</h4>
+          <p id="orbitText">3 people nearby can help. Click a glowing node to connect.</p>
+          <div class="connected" id="orbitConnected"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AI DISCLOSURE ============ -->
+<section class="section" id="ai">
+  <div class="wrap">
+    <p class="eyebrow reveal">05 — Transparency</p>
+    <h3 class="h2 reveal" data-delay="1">How we used AI. <span class="grad">Honestly.</span></h3>
+    <div class="ai-grid">
+      <div class="ai-card reveal" data-delay="1">
+        <h4>What AI helped with</h4>
+        <ul>
+          <li>Brainstorming and refining the idea</li>
+          <li>Generating and debugging code</li>
+          <li>Design direction and animation ideas</li>
+          <li>Drafting copy for this submission</li>
+        </ul>
+      </div>
+      <div class="ai-card reveal" data-delay="2">
+        <h4>What we did ourselves</h4>
+        <ul>
+          <li>Chose the problem and who it is for</li>
+          <li>Reviewed, tested and edited every output</li>
+          <li>Made the final design and product decisions</li>
+          <li>Can explain how every part works</li>
+        </ul>
+      </div>
+      <div class="ai-card reveal" data-delay="3">
+        <h4>Our promise</h4>
+        <p>AI was a teammate, not a shortcut. Every decision in ORVEX is one our team understands and stands behind.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TEAM ============ -->
+<section class="section" id="team">
+  <div class="wrap">
+    <p class="eyebrow reveal">06 — The team</p>
+    <h3 class="h2 reveal" data-delay="1">We are <span class="grad">ORVEX.</span></h3>
+    <div class="team">
+      <!-- EDIT: replace names, roles and initials -->
+      <div class="member reveal" data-tilt data-delay="1"><div class="avatar">AB</div><h4>Member One</h4><p>Role — e.g. Lead Developer</p></div>
+      <div class="member reveal" data-tilt data-delay="2"><div class="avatar">CD</div><h4>Member Two</h4><p>Role — e.g. Designer</p></div>
+      <div class="member reveal" data-tilt data-delay="3"><div class="avatar">EF</div><h4>Member Three</h4><p>Role — e.g. AI &amp; Research</p></div>
+      <div class="member reveal" data-tilt data-delay="4"><div class="avatar">GH</div><h4>Member Four</h4><p>Role — e.g. Presenter</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SUBMIT / CTA ============ -->
+<section class="section cta" id="submit">
+  <div class="wrap">
+    <div class="cta-box reveal">
+      <div class="aurora a2"></div>
+      <p class="eyebrow">Submission</p>
+      <h3 class="h2">Let's bring people <span class="grad">into orbit.</span></h3>
+      <p class="lead">Watch the demo, explore the project and see how ORVEX helps people connect.</p>
+      <div class="hero-cta">
+        <!-- EDIT: paste your real links below -->
+        <a href="#" class="btn btn-primary" data-magnetic><span>Devpost Page</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+        <a href="#" class="btn btn-ghost" data-magnetic>Watch Demo Video</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <span class="logo"><span class="logo-dot"></span>ORVEX</span>
+    <span class="muted">Built for the CSC Winter Sparkathon · <span id="year"></span></span>
+    <a href="#top" class="muted">Back to top ↑</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
