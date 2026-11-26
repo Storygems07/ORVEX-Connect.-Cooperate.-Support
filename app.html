@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ORVEX</title>
+<meta name="theme-color" content="#04050b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div class="aurora a1"></div><div class="aurora a2"></div>
+<div id="toasts" aria-live="polite"></div>
+
+<!-- ================= JOIN ================= -->
+<section id="join" class="join hide">
+  <form id="joinForm" class="join-card" autocomplete="off">
+    <a href="/" class="logo"><span class="logo-dot"></span>ORVEX</a>
+    <h1>Find your people.</h1>
+    <p class="sub">Join the live community. No email, no password — just a nickname.</p>
+
+    <label for="joinName">Your nickname</label>
+    <input id="joinName" maxlength="20" placeholder="e.g. StarGazer" required>
+
+    <label>What are you into? <span class="muted">(pick a few — we use this to match you)</span></label>
+    <div class="chips" id="joinChips"></div>
+
+    <p class="err" id="joinErr" role="alert"></p>
+    <button class="btn btn-primary wide" id="joinBtn">Enter ORVEX →</button>
+    <p class="rules">Be kind. Don't share your phone number, address or other personal details. You can report any message.</p>
+  </form>
+</section>
+
+<!-- ================= APP ================= -->
+<div id="app" class="app hide">
+  <div class="scrim" id="scrim"></div>
+
+  <aside class="side" id="side">
+    <a href="/" class="logo"><span class="logo-dot"></span>ORVEX</a>
+
+    <nav class="group">
+      <p class="label">Do something</p>
+      <button class="item" data-view="board"><span class="ico">❖</span><span class="lbl">Give-Back Board</span></button>
+      <button class="item" data-view="orbit"><span class="ico">◉</span><span class="lbl">My Orbit</span></button>
+    </nav>
+
+    <div class="group">
+      <p class="label">Spaces</p>
+      <div id="roomList"></div>
+    </div>
+
+    <div class="group grow">
+      <p class="label">Messages</p>
+      <div id="dmList"></div>
+    </div>
+
+    <div class="me" id="meCard"></div>
+  </aside>
+
+  <main class="main">
+    <header class="top">
+      <button class="menu" id="menuBtn" aria-label="Open menu"><i></i><i></i><i></i></button>
+      <b id="topTitle">Lounge</b>
+      <span class="conn" id="conn"><i></i><span>connecting</span></span>
+    </header>
+
+    <!-- chat -->
+    <section id="chat" class="view chat">
+      <div class="chat-head" id="chatHead"></div>
+      <div class="notice hide" id="notice"></div>
+      <div class="msgs" id="msgs"></div>
+      <form class="composer" id="composer" autocomplete="off">
+        <input id="input" maxlength="500" placeholder="Write a message…" aria-label="Message">
+        <button class="send" aria-label="Send">➤</button>
+      </form>
+    </section>
+
+    <!-- board -->
+    <section id="board" class="view pad hide">
+      <div class="view-head"><h2>Give-Back Board</h2><p>Ask for help or offer yours. When someone responds, a private chat opens.</p></div>
+      <form id="boardForm" class="card">
+        <div class="seg">
+          <button type="button" class="on" data-type="need">I need help</button>
+          <button type="button" data-type="offer">I can help</button>
+        </div>
+        <div class="row">
+          <select id="boardCat" aria-label="Category"></select>
+          <span class="muted small" id="boardCount">0/240</span>
+        </div>
+        <textarea id="boardText" maxlength="240" rows="3" placeholder="e.g. Stuck on quadratic equations before Friday's test…"></textarea>
+        <button class="btn btn-primary">Post to the board</button>
+      </form>
+      <div class="chips" id="boardFilter"></div>
+      <div id="boardList" class="stack"></div>
+    </section>
+
+    <!-- orbit -->
+    <section id="orbit" class="view pad hide">
+      <div class="view-head"><h2>My Orbit</h2><p>People online right now, sorted by what you have in common.</p></div>
+      <div class="card"><h4>Your interests</h4><div class="chips" id="myInterests"></div></div>
+      <div id="orbitList" class="grid"></div>
+    </section>
+  </main>
+
+  <aside class="people" id="people"></aside>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
